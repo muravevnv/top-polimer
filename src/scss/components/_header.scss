@@ -1,0 +1,149 @@
+.header {
+  padding: 16px 0;
+  font-family: var(--font-title);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__logo {
+    display: block;
+    width: 191px;
+
+    @include media(sm)  {
+      width: 110px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    gap: 24px;
+
+    @include media(md)  {
+      gap: 16px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+  }
+
+  &__main {
+    @include media(md)  {
+      position: fixed;
+      inset: 72px 0 0;
+      height: calc(100vh - 72px);
+      background-color: var(--color-whte);
+      padding: 40px 16px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      transform: translateX(-100%);
+      transition: var(--transition);
+
+      &.is-open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__email {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    span {
+      color: var(--color-grey);
+    }
+  }
+
+  &__tel {
+    color: var(--color-grey);
+  }
+
+  &__nav {
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      @include media(md)  {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      li {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include media(md) {
+      display: block;
+      width: 24px;
+      height: 18px;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-blck);
+        transition: var(--transition);
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-blck);
+        transition: var(--transition);
+      }
+
+      span {
+        position: absolute;
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-blck);
+        top: 8px;
+        transform: translateX(0);
+        transition: var(--transition);
+      }
+
+      &.is-active {
+
+        &::before {
+          transform: rotate(45deg);
+          top: 8px;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 8px;
+        }
+
+        span {
+          transform: translateX(-200px);
+        }
+      }
+    }
+  }
+}

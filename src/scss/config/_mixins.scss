@@ -1,0 +1,78 @@
+// Add Fonts
+@mixin font-face($name, $file, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: '#{$name}';
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: local('#{$file}'), url('../fonts/#{$file}.ttf') format('truetype');
+  }
+}
+
+// Mixin to manage responsive breakpoints
+// @param {String} $breakpoint - Breakpoint name
+$breakpoints: (
+  'xs': (
+    max-width: 560px
+  ),
+  'sm': (
+    max-width: 767px
+  ),
+  'md': (
+    max-width: 1023px
+  ),
+  'lg': (
+    max-width: 1200px
+  ),
+  'xl': (
+    max-width: 1440px
+  ),
+  'xxl': (
+    max-width: 1600px
+  ),
+  'xs-plus': (
+    min-width: 577px
+  ),
+  'sm-plus': (
+    min-width: 768px
+  ),
+  'md-plus': (
+    min-width: 993px
+  ),
+  'lg-plus': (
+    min-width: 1201px
+  ),
+  'xl-plus': (
+    min-width: 1400px
+  ),
+) !default;
+
+// @require $breakpoints
+@mixin media($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn 'Unfortunately, no value could be retrieved from #{$breakpoint}. Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}
+
+//hextorgb
+@function hextorgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+//color fucn
+@function cl($name, $opacity: false) {
+  @if $opacity {
+    @return rgba(var(--color-#{unquote($name)}--rgb), $opacity);
+  } @else {
+    @return var(--color-#{unquote($name)});
+  }
+}

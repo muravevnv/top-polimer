@@ -1,0 +1,26 @@
+// Vendors
+
+// Config
+@import 'config/variables';
+@import 'config/mixins';
+@import 'config/reset';
+@import 'config/fonts';
+@import 'config/global';
+@import 'config/typography';
+@import 'config/form';
+
+// Components
+
+@import 'components/btn';
+@import 'components/header';
+@import 'components/footer';
+
+//Sections
+@import 'sections/hero';
+@import 'sections/about';
+@import 'sections/services';
+@import 'sections/application';
+@import 'sections/projects';
+@import 'sections/calculate';
+@import 'sections/reviews';
+

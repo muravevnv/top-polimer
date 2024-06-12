@@ -1,0 +1,98 @@
+.calculate {
+  position: relative;
+  padding: 20px 0 130px;
+
+  @include media(sm)  {
+    padding: 40px 0 80px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    inset: auto 0 0;
+    height: 590px;
+    background: url('../images/calculation/calc-bg.png') center center / cover no-repeat;
+
+    @include media(sm) {
+      height: 320px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0px 2px 10px 0px #0000001A;
+    background-color: var(--color-whte);
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    @include media(sm) {
+      display: none;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    padding: 35px 40px 40px;
+
+    @include media(sm) {
+      padding: 24px;
+    }
+
+    &-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 24px;
+
+      @include media(sm) {
+        font-size: 18px;
+        margin-bottom: 16px;
+        max-width: 320px;
+      }
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 10px;
+
+      @include media(xs) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .form-group--xl {
+        grid-column: span 2;
+
+        @include media(xs) {
+          grid-column: span 1;
+        }
+      }
+    }
+
+    &-btn {
+      margin-top: 20px;
+      padding: 14px 16px;
+      font-size: 14px;
+      width: 280px;
+
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+  }
+}

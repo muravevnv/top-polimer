@@ -1,0 +1,234 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="css/main.css" rel="stylesheet")
+    title Главная
+  body
+    include mixins/_mixins
+    include components/header
+    main
+      section.hero 
+        picture.hero__bg 
+          img(src="./images/hero-bg.jpg", alt="")
+        .container 
+          .hero__subtitle Бетонные полы для вашего бизнеса
+          h1.hero__title.h1 Промышленные полы <br> для вашего бизнеса
+          .hero__desc Надежность на века – бетонные полы для вашего бизнеса! 
+            | Стойкость к экстремальным нагрузкам и долговечность 
+            | в эксплуатации с нашей уникальной гарантией качества.
+          button.hero__btn.btn.btn--white 
+            span Заявка на расчет
+            +svg(24, 24, 'arrow-right')
+          .hero__results
+            .hero__results-num 2023
+            .hero__results-desc возведено 26 объекта <br> в СПб и ЛО
+      section.about 
+        .container.about__container 
+          .about__info 
+            h2.about__title.h2 Устойчивость и 
+              | долговечность в
+              | каждом квадратном метре! 
+            .about__subtitle Выбирайте качество и профессионализм ТОП полимер
+            .about__years 
+              .about__year 
+                .about__year-num 2021
+                .about__year-info(style="--progress-width: 70%") 
+                  span Возведено 18000 м2 полов
+              .about__year 
+                .about__year-num 2022
+                .about__year-info(style="--progress-width: 80%")  
+                  span Возведено 22000 м2 полов
+              .about__year 
+                .about__year-num 2023
+                .about__year-info(style="--progress-width: 90%")  
+                  span Возведено 25000 м2 полов
+            .about__desc Мы предлагаем комплексные решения с использованием передовых 
+              | бетонных, топинговых и полимерных технологий, поддерживаемые многолетним 
+              | опытом и непрерывными инновациями.
+          .about__stats 
+            picture.about__stats-img 
+              img(src="./images/about.jpg", alt="")
+            .about__stats-desc 
+              span 65,000 +
+              | м2 возведено полов
+      section.services 
+        .container 
+          .services__label наши услуги
+          h2.services__title.h2 Бетонные полы для вашего бизнеса
+          .services__desc Создаем бетонные, топинговые и полимерные полы
+          .services__list 
+            .services__item 
+              .services__item-img 
+                img(src="./images/services/img-01.jpg", alt="Бетонные полы")
+              .services__item-title  Бетонные полы
+              .services__item-desc Устойчивость и долговечность в каждом квадратном метре! 
+                | Наши бетонные полы - залог вашего безупречного производства. 
+                | С гарантией вековой службы - это инвестиции в стабильность 
+                | вашего бизнеса.
+              .services__item-bottom 
+                .services__item-price от 5000 р / м2
+                a(href="#").services__item-btn   
+                  +svg(24, 24, 'arrow')
+            .services__item 
+              .services__item-img 
+                img(src="./images/services/img-02.jpg", alt="Топинговые полы ")
+              .services__item-title Топинговые полы 
+              .services__item-desc Износостойкость и прочность, укрепленная 
+                | топинг-покрытием. С нашими топинговыми полами ваше рабочее 
+                | пространство обретет не только надежность, но и экологичность. 
+                | Идеальный выбор для повышенной эксплуатации!
+              .services__item-bottom
+                .services__item-price от 5000 р / м2
+                a(href="#").services__item-btn   
+                  +svg(24, 24, 'arrow')
+            .services__item 
+              .services__item-img 
+                img(src="./images/services/img-03.jpg", alt="Полимерные полы")
+              .services__item-title  Полимерные полы
+              .services__item-desc Эстетика встречается с практичностью! С полимерными 
+                | покрытиями от 'Топ Полимер' вы получаете гигиеническое, легкое в уходе 
+                | и химически устойчивое решение. От склада до лаборатории - полы 
+                | на любой вкус и требования.
+              .services__item-bottom 
+                .services__item-price от 5000 р / м2
+                a(href="#").services__item-btn   
+                  +svg(24, 24, 'arrow')
+          .services__advantages 
+            .services__advantages-item 
+              span 10+
+              | лет опыты <br> работы
+            .services__advantages-item 
+              span 4.8/5
+              | Рейтинг по <br> отзывам
+            .services__advantages-item 
+              span 20+
+              | единиц <br> техники
+            .services__advantages-item 
+              span 1 мес
+              | средний срок <br> строительства
+      section.application 
+        .container 
+          .application__inner 
+            .application__title.h3 Вам необходимо получить КП? Оставьте заявку
+            .application__desc Оставьте заявку, и мы оперативно сделаем расчет для вас. <br> Мы гарантируем точность и быстрый результат.
+            form.application__form.form(action="#")
+              .application__form-row 
+                .form-group 
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Имя")
+                  span.form-error Заполните поле
+                .form-group 
+                  label.form-label(for="a-tel")
+                  input.form-control(type="text" id="a-tel" placeholder="Телефон")
+                  span.form-error Заполните поле
+                .form-group 
+                  label.form-label(for="a-email")
+                  input.form-control(type="text" id="a-email" placeholder="Email")
+                  span.form-error Заполните поле
+                button.form-btn.btn Отправить
+              .form-checkbox 
+                input(type="checkbox", name="" id="a-checkbox")
+                label(for="a-checkbox") Даю согласие на обработку 
+                  a(href="#") персональных данных 
+      section.projects 
+        .container 
+          .projects__head 
+            .projects__info 
+              .projects__label Портфолио
+              .projects__title.h2 Реализованные проекты
+            a(href="#").projects__btn.btn.btn--secondary
+              span Смотреть все
+              +svg(24, 24, 'arrow-right')
+          .projects__gallery 
+            .projects__gallery-img.projects__gallery-img--xl 
+              picture 
+                img(src="./images/projects/img-01.jpg", alt="")
+            .projects__gallery-img.projects__gallery-img--xl 
+              picture 
+                img(src="./images/projects/img-02.jpg", alt="")
+            .projects__gallery-img 
+              picture 
+                img(src="./images/projects/img-03.jpg", alt="")
+            .projects__gallery-img 
+              picture 
+                img(src="./images/projects/img-04.jpg", alt="")
+            .projects__gallery-img 
+              picture 
+                img(src="./images/projects/img-05.jpg", alt="")
+      section.calculate 
+        .container 
+          .calculate__inner 
+            picture.calculate__img
+              img(src="./images/calculation/calc-img.jpg", alt="")
+            form.calculate__form
+              .calculate__form-title.h3 Рассчитаем стоимость промышленного пола за 45 минут
+              .calculate__form-grid 
+                .form-group 
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Имя")
+                  span.form-error Заполните поле
+                .form-group 
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Организация")
+                  span.form-error Заполните поле
+                .form-group.form-group--xl
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Адрес")
+                  span.form-error Заполните поле
+                .form-group.form-group--xl
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Площадь")
+                  span.form-error Заполните поле
+                .form-group 
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Email")
+                  span.form-error Заполните поле
+                .form-group 
+                  label.form-label(for="a-name")
+                  input.form-control(type="text" id="a-name" placeholder="Телефон")
+                  span.form-error Заполните поле
+                .form-group.form-group--xl
+                  label.form-label(for="a-name")
+                  textarea.form-control( id="a-name" placeholder="Описание")
+                  span.form-error Заполните поле
+              .form-agreement 
+                | Отправляя свои данные через эту форму, вы соглашаетесь 
+                | с <a href="">политикой обработки персональных данных</a>
+                | и с <a href="">политикой кофиденциальности</a>
+              button(type="submit").calculate__form-btn.btn Рассчитать стоимость 
+      section.reviews 
+        .container.reviews__container 
+          .reviews__main 
+            .reviews__title.h2 Отзывы клиентов
+            .reviews__desc Мы всегда рады удивлять Вас качеством!
+            .reviews__inner 
+              img(src="./images/reviews/img-01.jpg", alt="")
+          .reviews__asside.reviews__asside--left.reviews__asside--blue 
+            .reviews__asside-title Рейтинг 4.7
+            .reviews__asside-text Наши клиенты высоко ценят качество наших работ, отмечая профессионализм и внимание к деталям.
+          .reviews__asside.reviews__asside--right.reviews__asside--secondary 
+            .reviews__asside-title Личный менеджер
+            .reviews__asside-text За каждым постоянным клиентом мы закрепляем личного менеджера, который будет всегда на связи и рад помочь!
+
+      section.projects.projects-video-section 
+        .container 
+          .projects__head 
+            .projects__title.h2 Реализованные проекты
+            a.projects__btn.btn.btn--seconadry(href="#") 
+              span Смотреть все
+              +svg(24, 24, 'arrow-right')
+        .projects-video 
+          video.projects-video__player(src="#" style="display: none")
+          img.projects-video__player(src="./images/video/video.png", alt="") 
+          button(type="button").projects-video__control 
+            <svg width="30" height="36" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 18L-1.63133e-06 35.3205L-1.17124e-07 0.679492L30 18Z" fill="currentColor"/>
+            </svg>
+
+
+
+    include components/footer
+    include includes/scripts

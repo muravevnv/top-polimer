@@ -1,0 +1,50 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-style: normal;
+  background-color: var(--color-primary);
+  text-align: center;
+  color: var(--color-whte);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+
+  @include media(sm)  {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+
+  @media(any-hover: hover) {
+    &:hover {
+      background-color: var(--color-blue); 
+      color: var(--color-whte);
+    }
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+
+    @media(any-hover: hover) {
+      &:hover {
+        background-color: var(--color-secondary-light); 
+      }
+    }
+  }
+
+  &--white {
+    background-color: var(--color-whte);
+    color: var(--color-blck);
+  }
+}
+
+

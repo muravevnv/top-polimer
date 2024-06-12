@@ -1,0 +1,32 @@
+$colors: (
+  "whte": #fff,
+  "blck": #051C2F,
+  "drk": #2F4252,
+  "primary": #4055a5,
+  "primary-dark": #162734,
+  "secondary": #FF5E4C,
+  "secondary-light": #EC4621,
+  "blue": #1375C3,
+  "dark-blue": #051C2F,
+  "light-blue": #CAD9E8,
+  "green": #9CFD56,
+  "grey": #7A7A7A,
+  "grey-light": #F5F6F7,
+  "input": #F6F6F6,
+  "footer-bg": #090E23,
+);
+
+
+:root {
+  @if $colors {
+    @each $key, $value in $colors {
+      --color-#{$key}: #{$value};
+      --color-#{$key}--rgb: #{hextorgb($value)};
+    }
+  }
+
+  --font-main: "DMSans", sans-serif;
+  --font-title: "Montserrat", sans-serif;
+  --font-size: 16px;
+  --transition: 0.3s ease-in-out;
+}
