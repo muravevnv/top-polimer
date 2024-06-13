@@ -33,10 +33,12 @@
 
   &--secondary {
     background-color: var(--color-secondary);
+    color: var(--color-blck);
 
     @media(any-hover: hover) {
       &:hover {
         background-color: var(--color-secondary-light); 
+        color: var(--color-blck);
       }
     }
   }

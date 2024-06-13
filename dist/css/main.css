@@ -324,6 +324,12 @@ p {
 .form-group.is-error .form-error {
   opacity: 1;
 }
+.form-group--icon::after {
+  position: absolute;
+  content: url("../images/map-pin.svg");
+  right: 15px;
+  top: 15px;
+}
 .form-error {
   position: absolute;
   left: 0;
@@ -422,9 +428,11 @@ p {
   color: #252525;
   max-width: 440px;
   opacity: 0.7;
+  font-family: var(--font-title);
 }
 .form-agreement a {
   text-decoration: underline;
+  display: inline;
 }
 .form-checkbox {
   margin-top: 20px;
@@ -443,9 +451,11 @@ p {
   padding-left: 28px;
   font-size: 12px;
   line-height: 18px;
+  font-family: var(--font-title);
 }
 .form-checkbox label > a {
   text-decoration: underline;
+  display: inline;
 }
 .form-checkbox label::before {
   position: absolute;
@@ -498,6 +508,7 @@ p {
 }
 .btn--secondary {
   background-color: var(--color-secondary);
+  color: var(--color-blck);
 }
 .btn--white {
   background-color: var(--color-whte);
@@ -983,6 +994,19 @@ p {
   text-transform: uppercase;
   color: var(--color-blue);
   margin-bottom: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 12px;
+}
+.projects__label::before {
+  content: url("../images/sun.svg");
+  width: 20px;
+  height: 20px;
 }
 .projects__gallery {
   display: grid;
@@ -1573,6 +1597,7 @@ p {
   }
   .btn--secondary:hover {
     background-color: var(--color-secondary-light);
+    color: var(--color-blck);
   }
   .services__item-btn:hover {
     color: var(--color-green);

@@ -8,6 +8,16 @@
         opacity: 1;
       }
     }
+
+    &--icon {
+
+      &::after {
+        position: absolute;
+        content: url('../images/map-pin.svg');
+        right: 15px;
+        top: 15px;
+      }
+    }
   }
 
   &-error {
@@ -82,9 +92,11 @@
     color: #252525;
     max-width: 440px;
     opacity: .7;
+    font-family: var(--font-title);
 
     a {
       text-decoration: underline;
+      display: inline;
     }
   }
 
@@ -111,9 +123,11 @@
       padding-left: 28px;
       font-size: 12px;
       line-height: 18px;
+      font-family: var(--font-title);
 
       > a {
         text-decoration: underline;
+        display: inline;
       }
 
       &::before {

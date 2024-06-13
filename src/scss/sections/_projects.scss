@@ -27,6 +27,16 @@
     text-transform: uppercase;
     color: var(--color-blue);
     margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &::before {
+      content: url('../images/sun.svg');
+      width: 20px;
+      height: 20px;
+    }
 
     @include media(md)  {
       margin-bottom: 10px;
